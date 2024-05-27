@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- CDN FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- LINK CSS -->
+     <link rel="stylesheet" href="alunos.css">
+     <!-- GOOGLE FONTS POPPINS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+     <!-- ICON -->
+     <link rel="shortcut icon" href="image/icon.ico" type="image/x-icon">
+     <!-- BOOTSTRAP -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <!-- JAVASCRIPT -->
+     <script src="alunos.js" defer></script>
+    <title>Meus Alunos</title>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <section id="menu">
+        <div class="logo">
+            <img src="image/logo.png" alt="logo">
+        </div>
+
+        <div class="items">
+            <li class="active-btn">
+                <i class="btn fa-solid fa-house"></i>
+                <a href="#" class="btn">Home</a>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-users"></i>
+                <a href="#">Alunos</a>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-dumbbell"></i>
+                <a href="#">Treinos</a>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <a href="#">Sair</a>
+            </li>
+        </div>
+    </section>
+
+    <!-- HEADER --> 
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div>
+                    <i class="fas fa-bars" id="menu-btn"></i>
+                </div>
+            </div>
+            <div class="profile">
+                <i class="fa fa-bell"></i>
+                <img src="image/personal.jpg" alt="personal" loading="lazy">
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="container-alunos">
+            <header>
+                <div class="filterEntries">
+                    <div class="entries">
+                        Mostrar <select name="#" id="table-size">
+                          <option value="all">Todos</option>
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select> Alunos
+                    </div>
+                    <div class="filter">
+                        <label for="Persquisar">Pesquisar:</label>
+                        <input type="search" name="" id="pesquisar" placeholder="Pesquisar">
+                    </div>
+                </div>
+
+                <div class="addMemberBtn">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastroModal" data-bs-whatever="@mdo"><i class="fa-solid fa-plus"></i>Adicionar Novo Aluno</button>
+                </div>
+            </header>
+
+        </div>
+
+        <!-- TABLE  -->
+        <table class="table-alunos" id="table">
+            <thead>
+                <tr class="heading-alunos">
+                    <th>#id</th>
+                    <th>Foto</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody class="body-table">
+                <tr>
+                    <td>01</td>
+                    <td><img src="image/woman1.jpg" alt="people" width="55" height="55"></td>
+                    <td>Mary Jane</td>
+                    <td>(88) 99765-4356</td>
+                    <td>maryJane@exemple.com</td>
+                    <td>
+                      <button><i class="fa-solid fa-eye" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#perfilModal" data-bs-whatever="@mdo"></i></button>
+                      <button><i class="fa-solid fa-pen-to-square"type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarModal" data-bs-whatever="@mdo"></i></button>
+                      <button><i class="fa-solid fa-dumbbell"></i></button>
+                      <button><i class="fa-solid fa-plus" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dicaModal" data-bs-whatever="@mdo"></i></button>
+                      <button><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td><img src="image/man3.jpg" alt="people" width="55" height="55"></td>
+                    <td>João da Silva</td>
+                    <td>(88) 99867-7416</td>
+                    <td>JoaoSilva@exemple.com</td>
+                    <td>
+                        <button><i class="fa-solid fa-eye" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#perfilModal" data-bs-whatever="@mdo"></i></button>
+                        <button><i class="fa-solid fa-pen-to-square"type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarModal" data-bs-whatever="@mdo"></i></button>
+                        <button><i class="fa-solid fa-dumbbell"></i></button>
+                        <button><i class="fa-solid fa-plus" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dicaModal" data-bs-whatever="@mdo"></i></button>
+                        <button><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+
+                <tr>
+                  <td>03</td>
+                  <td><img src="image/man1.jpg" alt="people" width="55" height="55"></td>
+                  <td>Steve Jobs</td>
+                  <td>(88) 99465-78536</td>
+                  <td>SteveJobs@exemple.com</td>
+                  <td>
+                      <button><i class="fa-solid fa-eye" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#perfilModal" data-bs-whatever="@mdo"></i></button>
+                      <button><i class="fa-solid fa-pen-to-square"type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarModal" data-bs-whatever="@mdo"></i></button>
+                      <button><i class="fa-solid fa-dumbbell"></i></button>
+                      <button><i class="fa-solid fa-plus" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dicaModal" data-bs-whatever="@mdo"></i></button>
+                      <button><i class="fa-solid fa-trash"></i></button>
+                  </td>
+              </tr>
+
+              <tr>
+                <td>04</td>
+                <td><img src="image/man4.jpg" alt="people" width="55" height="55"></td>
+                <td>John Doe</td>
+                <td>(88) 99865-7656</td>
+                <td>JohnDoe@exemple.com</td>
+                <td>
+                    <button><i class="fa-solid fa-eye" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#perfilModal" data-bs-whatever="@mdo"></i></button>
+                    <button><i class="fa-solid fa-pen-to-square"type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarModal" data-bs-whatever="@mdo"></i></button>
+                    <button><i class="fa-solid fa-dumbbell"></i></button>
+                    <button><i class="fa-solid fa-plus" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dicaModal" data-bs-whatever="@mdo"></i></button>
+                    <button><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <footer>
+          <span>Mostrando 1 a 10 de 50 Alunos</span>
+          <div class="pagination">
+              <button id="page1">1</button>
+              <button id="page2">2</button>
+              <button id="page3">3</button>
+              <button id="page4">4</button>
+              <button id="page5">5</button>
+          </div>
+      </footer>
+    </section>
+
+  <!-- FORMULÁRIO de ADICIONAR DICA-->
+<div class="modal fade" id="dicaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar dica para o aluno</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Título:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Mensagem:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FORMULÁRIO DE CADASTRAR NOVO ALUNO -->
+<div class="modal fade popup" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cadastrar Aluno</h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="imgholder">
+              <label for="uploadimg" class="upload">
+                  <input type="file" name="" id="uploadimg" class="picture">
+                  <i class="fa-solid fa-plus"></i>
+              </label>
+              <img src="image/pic1.png" alt="" width="150" height="150" class="img">
+           </div>
+            <div class="form-group">
+              <label for="nome">Nome:</label>
+              <input type="text" class="form-control" id="nome" placeholder="Nome do Aluno">
+            </div>
+            <div class="form-group">
+              <label for="telefone">Número de Telefone:</label>
+              <input type="tel" class="form-control" id="telefone" placeholder="Telefone do Aluno">
+            </div>
+            <div class="group">
+              <label for="age">Idade: </label>
+              <input type="number" class="form-control" id="age" placeholder="Idade do Aluno">
+
+              <label for="weigth">Peso: </label>
+              <input type="number" class="form-control" id="weigth" placeholder="Peso do Aluno">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="E-mail do Aluno">
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input type="password" class="form-control" id="passInput" placeholder="Crie uma senha" onkeyup="verifyPass()">
+              <div class="info">
+                <div class="description-info"><span>A senha deve conter:</span></div>
+                <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelo menos 8 caracteres</div>
+                <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelo Menos 1 letra Maiúscula</div>
+                <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelos Menos 1 número</div>
+                <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelo Menos 1 caratere especial: @#$%&!</div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL VIZUALIZAR PERFIL -->
+  <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="perfilModalLabel">Visualizar Perfil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="image/man3.jpg" alt="Foto do usuário" class="picture" id="uploadimg" width="150" height="150">
+            </div>
+            <div class="col-md-8">
+              <h4>Informações</h4>
+              <p><strong>Nome:</strong> John Doe</p>
+              <p><strong>Email:</strong> JohnDoe@example.com</p>
+              <p><strong>Telefone:</strong> (11) 99999-9999</p>
+              <p><strong>Idade:</strong> 30 anos</p>
+              <p><strong>Peso:</strong> 70 kg</p>
+              <p><strong>Senha:</strong> ********** (ocultada por segurança)</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- EDITAR PERFIL MODAL -->
+<div class="modal fade popup" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="imgholder">
+            <label for="uploadimg" class="upload">
+                <input type="file" name="" id="uploadimg" class="picture">
+                <i class="fa-solid fa-plus"></i>
+            </label>
+            <img src="image/pic1.png" alt="" width="150" height="150" class="img">
+         </div>
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" placeholder="Nome do Aluno">
+          </div>
+          <div class="form-group">
+            <label for="telefone">Número de Telefone:</label>
+            <input type="tel" class="form-control" id="telefone" placeholder="Telefone do Aluno">
+          </div>
+          <div class="group">
+            <label for="age">Idade: </label>
+            <input type="number" class="form-control" id="age" placeholder="Idade do Aluno">
+
+            <label for="weigth">Peso: </label>
+            <input type="number" class="form-control" id="weigth" placeholder="Peso do Aluno">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="E-mail do Aluno">
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" class="form-control" id="passInput" placeholder="Crie uma senha" onkeyup="verifyPass()">
+            <div class="info">
+              <div class="description-info"><span>A senha deve conter:</span></div>
+              <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelo menos 8 caracteres</div>
+              <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelo Menos 1 letra Maiúscula</div>
+              <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelos Menos 1 número</div>
+              <div class="feed"><i class="fa-solid fa-circle-exclamation"></i>Pelo Menos 1 caratere especial: @#$%&!</div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Atualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- inputmask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+   <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
